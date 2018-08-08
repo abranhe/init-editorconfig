@@ -4,7 +4,7 @@
 	<br>
 	<br>
 	<a href="https://www.npmjs.com/package/init-editorconfig"><b>init-editorconfig</b></a>
-	: Complex generator of `.editorconfig` 🐭
+	: Complex generator of <i>.editorconfig</i> 🐭
 </p>
 
 <p align="center">
@@ -145,30 +145,30 @@ const editorconfig = require('init-editorconfig');
 editorconfig.root(true);
 
 editorconfig.also();
-editorconfig.match(`*`);
+editorconfig.match('*');
 editorconfig.property('end_of_line', 'lf');
 editorconfig.property('insert_final_newline', 'true');
 
 editorconfig.also();
-editorconfig.match(`*.{js,py}`);
+editorconfig.match('*.{js,py}');
 editorconfig.property('charset', 'utf-8');
 
 editorconfig.also();
-editorconfig.match(`*.py`);
+editorconfig.match('*.py');
 editorconfig.property('indent_style', 'space');
 editorconfig.property('indent_size', '4');
 
 editorconfig.also();
-editorconfig.match(`Makefile`);
+editorconfig.match('Makefile');
 editorconfig.property('indent_style', 'tab');
 
 editorconfig.also();
-editorconfig.match(`[lib/**.js]`);
+editorconfig.match('[lib/**.js]');
 editorconfig.property('indent_style', 'space');
 editorconfig.property('indent_size', '2');
 
 editorconfig.also();
-editorconfig.match(`{package.json,.travis.yml}`);
+editorconfig.match('{package.json,.travis.yml}');
 editorconfig.property('indent_style', 'space');
 editorconfig.property('indent_size', '2');
 ```
@@ -231,7 +231,7 @@ indent_size = 2
 -  [init-pkg-json](https://github.com/abranhe/init-pkg-json): 📦 Complex generator of Package.json.
 -  [init-pkg-json-cli](https://github.com/abranhe/init-pkg-json-cli): CLI for package.json generator 📦 .
 -  [init-gitignore-cli](https://github.com/abranhe/init-gitignore-cli): CLI for init-gitignore
-- [init-editorconfig-cli](https://github.com/abranhe/init-editorconfig-cli):  Complex generator of .editorconfig 🐭
+- [init-editorconfig-cli](https://github.com/abranhe/init-editorconfig-cli):  CLI for this module 🐭
 
 # Team
 
