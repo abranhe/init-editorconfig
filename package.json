@@ -1,0 +1,38 @@
+{
+  "name": "init-editorconfig",
+  "version": "1.0.0",
+  "description": "Complex generator of .editorconfig 🐭",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo fine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abranhe/init-editorconfig.git"
+  },
+  "keywords": [
+    "editorconfig",
+    "editor",
+    "init",
+    "initer",
+    "generator",
+    "builder",
+    "files",
+    "module",
+    "yarn",
+    "npm"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "author": {
+    "name": "Carlos Abraham",
+    "email": "abraham@abranhe.com",
+    "web": "abranhe.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abranhe/init-editorconfig/issues"
+  },
+  "homepage": "https://github.com/abranhe/init-editorconfig#readme"
+}
