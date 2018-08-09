@@ -10,6 +10,9 @@
     "type": "git",
     "url": "https://github.com/abranhe/init-editorconfig.git"
   },
+	"engines": {
+    "node": ">=8.0.0"
+  },
   "keywords": [
     "editorconfig",
     "editor",
