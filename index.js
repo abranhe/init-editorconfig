@@ -36,10 +36,6 @@ Object.prototype.also = () => {
 };
 
 exports.root = bool => {
-	if (typeof bool === 'boolean') {
-		editorconfig.prop('root', bool);
-	} else {
-		console.log('Error: \'' + bool + '\' is not boolean');
-	}
+	editorconfig.prop('root', bool);
 	createEditorConfig();
 };
