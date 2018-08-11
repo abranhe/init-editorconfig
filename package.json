@@ -1,6 +1,6 @@
 {
   "name": "init-editorconfig",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Complex generator of .editorconfig 🐭",
   "main": "index.js",
   "scripts": {
