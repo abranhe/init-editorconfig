@@ -142,7 +142,7 @@ $ npm install init-editorconfig
 ```js
 const editorconfig = require('init-editorconfig');
 
-editorconfig.root(true);
+editorconfig.root('true');
 
 editorconfig.also();
 editorconfig.match('*');
