@@ -142,7 +142,7 @@ $ npm install init-editorconfig
 ```js
 const editorconfig = require('init-editorconfig');
 
-editorconfig.root(true);
+editorconfig.root('true');
 
 editorconfig.also();
 editorconfig.match('*');
@@ -163,7 +163,7 @@ editorconfig.match('Makefile');
 editorconfig.property('indent_style', 'tab');
 
 editorconfig.also();
-editorconfig.match('[lib/**.js]');
+editorconfig.match('lib/**.js');
 editorconfig.property('indent_style', 'space');
 editorconfig.property('indent_size', '2');
 
@@ -171,6 +171,8 @@ editorconfig.also();
 editorconfig.match('{package.json,.travis.yml}');
 editorconfig.property('indent_style', 'space');
 editorconfig.property('indent_size', '2');
+
+editorconfig.build();
 ```
 
 Result in `.editorconfig`:
@@ -181,7 +183,6 @@ Result in `.editorconfig`:
 #
 # Build with init-editorconfig
 # https://github.com/abranhe/init-editorconfig
-
 root = true
 
 [*]
@@ -198,13 +199,37 @@ indent_size = 4
 [Makefile]
 indent_style = tab
 
-[[lib/**.js]]
+[lib/**.js]
 indent_style = space
 indent_size = 2
 
 [{package.json,.travis.yml}]
 indent_style = space
 indent_size = 2
+```
+
+`getFile()` Example:
+
+```js
+const editorconfig = require('init-editorconfig');
+
+editorconfig.root('true');
+
+editorconfig.also();
+editorconfig.match('*');
+editorconfig.property('end_of_line', 'lf');
+editorconfig.property('insert_final_newline', 'true');
+
+console.log(editorconfig.getFile());
+// # EditorConfig
+// # https://EditorConfig.org
+// #
+// # Build with init-editorconfig
+// # https://github.com/abranhe/init-editorconfig
+// root = true
+//
+// [*]
+// ...
 ```
 
 # API
@@ -224,6 +249,14 @@ indent_size = 2
 **property(property, value)**
 
 > Create a new property for EditorConfig
+
+**build()**
+
+> Create a new .gitignore file on the current directory
+
+**getFile()**
+
+> Get an string with the file created values
 
 # Related
 

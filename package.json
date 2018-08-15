@@ -1,17 +1,14 @@
 {
   "name": "init-editorconfig",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Complex generator of .editorconfig 🐭",
   "main": "index.js",
   "scripts": {
-    "test": "ci-success"
+    "test": "ci-success travis --success"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/abranhe/init-editorconfig.git"
-  },
-	"engines": {
-    "node": ">=8.0.0"
   },
   "keywords": [
     "editorconfig",
@@ -39,6 +36,6 @@
   },
   "homepage": "https://github.com/abranhe/init-editorconfig#readme",
   "devDependencies": {
-    "ci-success": "^1.0.0"
+    "ci-success": "^2.0.0"
   }
 }

@@ -1,41 +1,49 @@
 'use strict';
 const fs = require('fs');
 
-const editorconfig = [];
-
-editorconfig.push(`# EditorConfig
-# https://EditorConfig.org
-#
-# Build with init-editorconfig
-# https://github.com/abranhe/init-editorconfig
-`);
-
-const createEditorConfig = () => {
-	fs.writeFile('.editorconfig', editorconfig.join(''), err => {
+const buildFile = (data) => {
+	fs.writeFile('.editorconfig', data, err => {
 		if (err) {
 			console.log(err);
 		}
 	});
 };
 
+let file = [`# EditorConfig
+# https://EditorConfig.org
+#
+# Build with init-editorconfig
+# https://github.com/abranhe/init-editorconfig
+`];
+
+let saveData = (data) => {
+	file.push(data);
+};
+
+exports.property = (property, val) => {
+	saveData(property + ' = ' + val + '\n');
+};
+
 exports.match = matching => {
-	editorconfig.push('[');
-	editorconfig.push(matching);
-	editorconfig.push(']');
-	createEditorConfig();
-};
-
-exports.property = Object.prototype.prop = (property, val) => {
-	editorconfig.push('\n' + property + ' = ' + val);
-	createEditorConfig();
-};
-
-Object.prototype.also = () => {
-	editorconfig.push('\n\n');
-	createEditorConfig();
-};
+	let m = [];
+	m.push('[');
+	m.push(matching);
+	m.push(']');
+	saveData(m.join('').toString() + '\n');
+}
 
 exports.root = bool => {
-	editorconfig.prop('root', bool);
-	createEditorConfig();
+	saveData('root' + ' = ' + bool + '\n');
 };
+
+exports.also = () => {
+	saveData('\n');
+};
+
+exports.build = () => {
+	buildFile(file.join(''));
+}
+
+exports.getFile = () => {
+		return file.join('');
+}
